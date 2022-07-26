@@ -20,7 +20,13 @@ public class ProductManager {
         Product[] result = new Product[0];
         for (Product product : repo.FindAll()) {
             if(product.matches(product, query)){
-                result[result.length - 1] = product;
+                Product[] tmp = new Product[result.length+1];
+                for (int i = 0; i < result.length; i++) {
+                    tmp[i]=result[i];
+
+                }
+                tmp[tmp.length - 1] = product;
+                result=tmp;
             }
 
         }
