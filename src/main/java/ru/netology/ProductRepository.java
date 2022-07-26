@@ -1,2 +1,4 @@
-package ru.netology;public class ProductRepository {
+package ru.netology;
+
+public class ProductRepository {
 }

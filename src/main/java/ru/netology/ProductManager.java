@@ -1,2 +1,4 @@
-package ru.netology;public class ProductManager {
+package ru.netology;
+
+public class ProductManager {
 }
