@@ -2,8 +2,6 @@ package ru.netology;
 
 public class Main {
     public static void main(String[] args) {
-
-
         ProductRepository repo = new ProductRepository();
 
         repo.add(new Book(1, "Фальшивые зеркала", 320, "Сергей Лукьяненко"));
@@ -15,11 +13,19 @@ public class Main {
         repo.add(new Book(7, "451", 289, "Рэй Брэдбери"));
         repo.add(new Book(8, "Маленький принц", 139, "Антуан де Сент-Экзюпери"));
         repo.add(new Book(9, "Гроздья гнева", 309, "Джон Стейнбек"));
-
-
+        repo.add(new Smartphone(10,"Galaxy", 15000, "Samsung"));
 
 
         repo.FindAll();
+        repo.DeleteById(7);
+
+        ProductManager manager = new ProductManager(new ProductRepository());
+
+        manager.searchByName("гнев");
+
+
+
+
 
     }
 }

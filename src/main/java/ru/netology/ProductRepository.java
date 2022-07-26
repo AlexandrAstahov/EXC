@@ -1,8 +1,16 @@
 package ru.netology;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 
 public class ProductRepository {
-    Product[] products = new Product[0];
+    private Product[] products = new Product[0];
+
 
     public void add (Product product) {
         Product [] tmp = new Product[products.length + 1];
@@ -19,13 +27,17 @@ public class ProductRepository {
         return products;
     }
 
-//    public Product[] DeleteById(int id) {
-//        Product[] result = new Product[0];
-//
-//        for (Product product : products) {
-//            if (products.matches(query)){
-//
-//            }
-//
-//        }
+
+    public void DeleteById(int id) {
+        Product[] tmp = new Product[products.length - 1];
+        int index = 0;
+
+        for (Product product : products) {
+            if(product.getId() != id){
+                tmp[index] = product;
+                index++;
+            }
+        }
+        products = tmp;
+        }
     }
