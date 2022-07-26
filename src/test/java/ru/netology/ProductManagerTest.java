@@ -2,6 +2,7 @@ package ru.netology;
 
 public class ProductManagerTest {
     ProductManager manager = new ProductManager(new ProductRepository());
+
     Book book1 = new Book(1, "Фальшивые зеркала", 320, "Сергей Лукьяненко");
     Book book2 = new Book(2, "Незнайка на луне", 160, "Николай носов");
     Book book3 = new Book(3,"Тревожные люди",279,"Фредрик Бакман");
