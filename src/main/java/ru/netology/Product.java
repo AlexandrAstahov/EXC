@@ -13,7 +13,4 @@ public class Product {
     protected String name;
     protected int price;
 
-    public boolean matches (Product product, String query){
-        return product.getName().contains(query);
-    }
 }

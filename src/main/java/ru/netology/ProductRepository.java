@@ -23,7 +23,7 @@ public class ProductRepository {
         }
 
 
-    public Product[] FindAll() {
+    public Product[] findAll() {
         return products;
     }
 
