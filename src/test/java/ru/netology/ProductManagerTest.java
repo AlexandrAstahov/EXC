@@ -25,19 +25,16 @@ public class ProductManagerTest {
     @Test
 
     public void souldAdd() {
-        ProductRepository repo = new ProductRepository();
         ProductManager manager = new ProductManager();
 
         manager.add(book1);
+        manager.add(book2);
+        manager.add(book3);
+        manager.add(book4);
+        manager.add(book5);
 
-
-//        manager.add(book2);
-//        manager.add(book3);
-//        manager.add(book4);
-//        manager.add(book5);
-
-        Product[] actual = manager.searchByName("Заживо");
-        Product[] expected = {book4};
+        Product[] actual = manager.searchByName("Фальшивые");
+        Product[] expected = {book1};
 
         Assertions.assertArrayEquals(actual, expected);
 

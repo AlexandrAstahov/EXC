@@ -8,7 +8,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 
 public class ProductManager {
-    private ProductRepository repo;
+    private ProductRepository repo = new ProductRepository();
+//    private ProductRepository repo;
 
     public ProductManager(ProductRepository repo) {
         this.repo = repo;
