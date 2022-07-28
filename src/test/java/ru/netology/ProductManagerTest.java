@@ -8,11 +8,12 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 public class ProductManagerTest {
+
     Book book1 = new Book(1, "Фальшивые зеркала", 320, "Сергей Лукьяненко");
     Book book2 = new Book(2, "Незнайка на луне", 160, "Николай носов");
-    Book book3 = new Book(3, "Тревожные люди", 279, "Фредрик Бакман");
+    Book book3 = new Book(3, "Тревожные Фальшивые", 279, "Фредрик Бакман");
     Book book4 = new Book(4, "Заживо в темноте", 367, "Майк Омер");
-    Book book5 = new Book(5, "Симон", 349, "Наринэ Абгарян");
+    Book book5 = new Book(5, "Фальшивые", 349, "Наринэ Абгарян");
     Book book6 = new Book(6, "Дом на краю ночи", 350, "Кэтрин Бэннер");
     Book book7 = new Book(7, "451", 289, "Рэй Брэдбери");
     Book book8 = new Book(8, "Маленький принц", 139, "Антуан де Сент-Экзюпери");
@@ -24,8 +25,8 @@ public class ProductManagerTest {
 
     @Test
 
-    public void souldAdd() {
-        ProductManager manager = new ProductManager();
+    public void shouldAdd() {
+        ProductManager manager = new ProductManager(new ProductRepository());
 
         manager.add(book1);
         manager.add(book2);
@@ -34,7 +35,7 @@ public class ProductManagerTest {
         manager.add(book5);
 
         Product[] actual = manager.searchByName("Фальшивые");
-        Product[] expected = {book1};
+        Product[] expected = {book1, book3, book5};
 
         Assertions.assertArrayEquals(actual, expected);
 

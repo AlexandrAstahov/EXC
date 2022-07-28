@@ -1,15 +1,10 @@
 package ru.netology;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
-@Data
-@NoArgsConstructor
 
 public class ProductManager {
-    private ProductRepository repo = new ProductRepository();
-//    private ProductRepository repo;
+    private ProductRepository repo;
+
 
     public ProductManager(ProductRepository repo) {
         this.repo = repo;

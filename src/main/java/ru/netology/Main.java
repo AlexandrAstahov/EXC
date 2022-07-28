@@ -5,7 +5,7 @@ public class Main {
     public static void main(String[] args) {
 
         ProductRepository repo = new ProductRepository();
-        ProductManager man = new ProductManager();
+        ProductManager man = new ProductManager(repo);
 
 
         Book book1 = new Book(1, "Фальшивые зеркала", 320, "Сергей Лукьяненко");
@@ -26,8 +26,8 @@ public class Main {
         repo.add(book5);
         repo.add(smartphone2);
         repo.add(book2);
-//        man.add(book6);
-//        man.add(book7);
+        man.add(book6);
+        man.add(book7);
 
         System.out.println(repo.getProducts());
 
