@@ -1,7 +1,6 @@
 package ru.netology;
 
 
-
 public class ProductManager {
     private ProductRepository repo;
 

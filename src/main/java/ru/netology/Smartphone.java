@@ -1,5 +1,9 @@
 package ru.netology;
 
+import lombok.Data;
+
+@Data
+
 public class Smartphone extends Product {
     private String manufacturer;
 
