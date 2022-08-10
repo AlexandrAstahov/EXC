@@ -27,7 +27,7 @@ public class ProductManagerTest {
 
     @Test
 
-    public void shouldAddManager() {
+    public void shouldFindByNameMultipleProducts() {
         manager.add(book1);
         manager.add(book2);
         manager.add(book3);
@@ -39,6 +39,26 @@ public class ProductManagerTest {
 
         Assertions.assertArrayEquals(actual, expected);
 
+    }
+
+    @Test
+
+    public void shouldFindByNameOneProducts() {
+        manager.add(book3);
+
+        Product[] actual = manager.searchByName("о");
+        Product[] expected = {book3};
+
+        Assertions.assertArrayEquals(actual, expected);
+    }
+
+    @Test
+    public void shouldFindByNameNoProducts() {
+
+        Product[] actual = manager.searchByName("о");
+        Product[] expected = {};
+
+        Assertions.assertArrayEquals(actual, expected);
     }
 
     @Test
