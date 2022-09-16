@@ -26,6 +26,9 @@ public class ProductRepository {
 
 
     public void DeleteById(int id) {
+        if (searchById(id) == null) {
+            throw new NotFoundException("Элемент с id: " + id + " не найден");
+        }
         Product[] tmp = new Product[products.length - 1];
         int index = 0;
 
@@ -37,4 +40,21 @@ public class ProductRepository {
         }
         products = tmp;
     }
+
+    public Product[] searchById(int id) {
+        Product[] result = new Product[0];
+        for (Product product : findAll()) {
+            if (product.getId() == id) {
+                Product[] tmp = new Product[result.length + 1];
+                for (int i = 0; i < result.length; i++) {
+                    tmp[i] = result[i];
+                }
+                tmp[tmp.length - 1] = product;
+                result = tmp;
+                return result;
+            }
+        }
+        return null;
+    }
+
 }

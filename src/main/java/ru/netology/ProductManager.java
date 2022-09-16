@@ -30,6 +30,7 @@ public class ProductManager {
         return result;
     }
 
+
     public boolean matches(Product product, String query) {
         return product.getName().contains(query);
     }

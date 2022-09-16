@@ -1,11 +1,10 @@
 package ru.netology;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class ProductManagerTest {
     ProductRepository repo = new ProductRepository();
@@ -40,6 +39,7 @@ public class ProductManagerTest {
         Assertions.assertArrayEquals(actual, expected);
 
     }
+
 
     @Test
 
@@ -77,5 +77,17 @@ public class ProductManagerTest {
         Assertions.assertArrayEquals(actual, expected);
     }
 
+    @Test
+    public void shouldRemoveByIdNonExistent() {
+        repo.add(book1);
+        repo.add(book2);
+        repo.add(smartphone1);
+        repo.add(smartphone2);
+
+
+        assertThrows(NotFoundException.class, () -> {
+            repo.DeleteById(5);
+        });
+    }
 
 }
